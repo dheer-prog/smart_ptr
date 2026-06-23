@@ -1,6 +1,8 @@
 # smart_ptr
 Simple header file for smart pointer-style cleanup in C.
 
+Just need to #include "smart_ptr.h" to use this library
+
 This header uses GCC/Clang's `cleanup` attribute so a pointer is automatically
 freed when it goes out of scope.
 
