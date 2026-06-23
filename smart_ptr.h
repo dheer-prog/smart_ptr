@@ -9,7 +9,7 @@ static inline void cleaner(void* ptrs){
     free(*(void **)ptrs); 
 }
 static void move(void** dst,void** src){
-    assert(t1!=t2); 
+    assert(dst!=src); 
     *dst = *src;
     *src = NULL;
 }

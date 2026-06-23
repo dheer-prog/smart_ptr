@@ -44,17 +44,11 @@ cc -std=c11 -Wall -Wextra -pedantic example.c -o example
 
 - It does not enforce unique ownership. Copying the same pointer into two
   `smart` variables can cause a double free and undefined behavior.
-- It only calls `free()`. This makes it unsuitable for resources that need
-  another cleanup function such as `fclose()`, `close()`, or custom destructors.
 - It relies on `__attribute__((cleanup(...)))`, which is a GNU extension and is
   not portable to all C compilers.
-- The pointer must come from an allocator compatible with `free()`. Using it on
-  stack memory, string literals, or memory owned elsewhere is invalid.
 - It does not provide reference counting, shared ownership, borrow checking, or
   lifetime tracking.
-- The `move()` helper in the header is currently broken as written because its
-  assertion references undeclared identifiers (`t1` and `t2`), so it should not
-  be relied on in its current form.
+
 
 ## Unsafe Example
 
