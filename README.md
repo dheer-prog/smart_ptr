@@ -4,14 +4,7 @@ Simple header file for smart pointer-style cleanup in C.
 This header uses GCC/Clang's `cleanup` attribute so a pointer is automatically
 freed when it goes out of scope.
 
-## Header
-
-```c
-#define smart __attribute__((cleanup(cleaner)))
-```
-
-That means code like `smart int *p = malloc(sizeof *p);` will call `free(p)`
-automatically when the current scope ends.
+ 
 
 ## Example
 
